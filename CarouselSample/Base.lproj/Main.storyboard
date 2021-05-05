@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Carousel View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CarouselViewController" customModule="CarouselSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qsk-Qp-Sxc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="gxe-p9-s74">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-zv-be8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
+                                        </containerView>
+                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fle-BH-uC6">
+                                            <rect key="frame" x="0.0" y="244" width="375" height="56"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="1RI-ki-glA"/>
+                                            </connections>
+                                        </searchBar>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Qlf-zv-be8" secondAttribute="trailing" id="1im-J7-yV3"/>
+                                        <constraint firstAttribute="bottom" secondItem="fle-BH-uC6" secondAttribute="bottom" id="3Kh-C1-fbP"/>
+                                        <constraint firstAttribute="height" constant="300" id="Hf8-Gq-mc3"/>
+                                        <constraint firstAttribute="trailing" secondItem="fle-BH-uC6" secondAttribute="trailing" id="auj-Zc-LO6"/>
+                                        <constraint firstItem="fle-BH-uC6" firstAttribute="top" secondItem="Qlf-zv-be8" secondAttribute="bottom" id="bki-BQ-q2p"/>
+                                        <constraint firstItem="Qlf-zv-be8" firstAttribute="top" secondItem="gxe-p9-s74" secondAttribute="top" id="c16-Fj-FBj"/>
+                                        <constraint firstItem="fle-BH-uC6" firstAttribute="leading" secondItem="gxe-p9-s74" secondAttribute="leading" id="fyN-2g-zte"/>
+                                        <constraint firstItem="Qlf-zv-be8" firstAttribute="leading" secondItem="gxe-p9-s74" secondAttribute="leading" id="sCn-UZ-0fP"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="GRz-aa-PvE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vhP-rX-5d0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qsk-Qp-Sxc" secondAttribute="trailing" id="67m-Zn-tAY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qsk-Qp-Sxc" secondAttribute="bottom" id="Omj-3p-bIc"/>
+                            <constraint firstItem="Qsk-Qp-Sxc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oPx-gP-efX"/>
+                            <constraint firstItem="Qsk-Qp-Sxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xnd-XI-LNy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="fle-BH-uC6" id="ahZ-ZR-rEc"/>
+                        <outlet property="tableView" destination="Qsk-Qp-Sxc" id="iv4-Ds-0Kb"/>
+                        <outlet property="vwContainer" destination="Qlf-zv-be8" id="Kbd-jZ-8tR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Carousel Page View Controller-->
+        <scene sceneID="DRF-hy-fHn">
+            <objects>
+                <pageViewController storyboardIdentifier="CarouselPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Sgm-2L-5qf" customClass="CarouselPageViewController" customModule="CarouselSample" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXn-NA-44j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="871"/>
+        </scene>
+    </scenes>
+</document>
